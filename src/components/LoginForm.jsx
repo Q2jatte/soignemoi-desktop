@@ -93,7 +93,6 @@ function LoginForm() {
         <form className="login__form" onSubmit={handleLogin}>
             <input type="email" className="login__input" id="login__email" name="login__email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />            
             <input type="password" className="login__input" id="login__password" name="login__password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <p><a href="#">Mot de passe oublié ?</a></p>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <button type="submit" className="min-button button-green">Se connecter</button>
         </form> 
