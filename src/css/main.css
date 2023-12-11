@@ -1,0 +1,113 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;        
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 700;        
+}
+
+.text-light {
+    font-size: 1rem;
+
+}
+
+.orange {
+    color: #F5652F;
+}
+
+.green {
+    color: #54A092;
+}
+
+/* FLUX */
+.flux {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* BUTTON */
+
+.button {    
+    width: calc(100% - 40px);
+    min-width: 350px;
+    min-height: 80px;
+    padding: 10px;    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #777;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.button:hover {
+    animation: zoomInOut 0.5s ease-in-out;
+}
+
+.button:active {
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+.min-button {
+    /*margin: auto;*/
+    min-width: 140px;
+    min-height: 40px;
+    padding: 10px;    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #777;
+    color: white;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.min-button:active {
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1); /* Commence à la taille normale */
+    }
+    50% {
+        transform: scale(1.2); /* Grossit à 120% à mi-chemin de l'animation */
+    }
+    100% {
+        transform: scale(1); /* Revient à la taille normale à la fin de l'animation */
+    }
+}
+
+.button-green {   
+    background-color: #54A092;       
+}
+
+.button-orange {    
+    background-color: #F5652F;        
+}
+
+/* GLOBAL */
+main {
+    min-height: 100vh;
+}
+
+/* ECRAN LARGE */
+@media screen and (min-width:1000px) {
+
+    .button {
+        min-width: 320px;
+    }
+
+}
