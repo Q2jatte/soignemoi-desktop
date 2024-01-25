@@ -1,4 +1,4 @@
-// Dashboard
+// Dashboard : resume all important onformations
 
 import Menu from "../components/Menu";
 import Dashboard from "../components/Dashboard";

@@ -1,7 +1,6 @@
 .main {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;    
     display: flex;
     height: 100vh;
 }

@@ -10,10 +10,14 @@ import { AuthProvider } from './contexts/AuthContext';
 
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import FluxPage from './pages/FluxPage';
+import SearchPage from './pages/SearchPage';
+import PatientPage from './pages/PatientPage';
 import ErrorPage from './pages/Error404';
 
 import './css/_reset.css';
 import './css/main.css';
+
 
 // Toutes les routes de l'app
 const router = createBrowserRouter([
@@ -30,6 +34,21 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <DashboardPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/flux',
+    element: <FluxPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/search',
+    element: <SearchPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/patient',
+    element: <PatientPage />,
     errorElement: <ErrorPage />,
   },
 ]);

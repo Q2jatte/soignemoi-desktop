@@ -7,8 +7,14 @@ html {
     font-size: 16px;
 }
 
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;   
+}
+
 h2 {
     font-size: 2rem;
+    font-weight: 300;
 }
 
 h3 {
@@ -23,7 +29,12 @@ h4 {
 
 .text-light {
     font-size: 1rem;
+    font-weight: 300;
+}
 
+.text-bold {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .orange {
@@ -103,11 +114,14 @@ main {
     min-height: 100vh;
 }
 
-/* ECRAN LARGE */
-@media screen and (min-width:1000px) {
+.content {
+    width: 100%
+}
 
-    .button {
-        min-width: 320px;
-    }
-
+.content__grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 240px 240px;
+    grid-gap: 20px;
 }

@@ -1,7 +1,43 @@
 .menu {
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    min-width: 300px;
+    background-color: #131313;
+    color: #fff;    
     box-sizing: border-box;
+}
+
+.menu__logo {
+    margin-left: 9px;    
+} 
+
+.menu__profile {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu__profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 9999px;
+}
+
+.menu__profile-text {
+    padding-bottom: 10px;
+}
+
+.menu__list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.menu__item {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
 }
