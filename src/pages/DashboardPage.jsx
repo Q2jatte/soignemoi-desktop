@@ -1,10 +1,16 @@
 // Dashboard
 
+import Menu from "../components/Menu";
+import Dashboard from "../components/Dashboard";
+
+import '../css/dashboard.css';
+
 function DashboardPage() {    
   
   return (
-    <div>
-        Dashboard
+    <div className="main">
+      <Menu/>
+      <Dashboard/>
     </div>
   );
 }

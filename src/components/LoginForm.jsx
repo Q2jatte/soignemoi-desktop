@@ -12,8 +12,8 @@ import '../css/loginForm.css';
 function LoginForm() {  
 
   // valeurs du formulaire
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('p.charvet@soignemoi.com');
+  const [password, setPassword] = useState('Studi2024*');
   const [error, setError] = useState(null);
   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
