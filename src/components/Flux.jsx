@@ -1,23 +1,20 @@
-import Entries from "./Entries";
+// Flux component : header and flux content
+
 import Header from "./Header";
-import Exits from "./Exits";
-import Planning from "./Planning";
+import StaysList from "./StaysList";
 
 import '../css/flux.css';
 
 function Flux(){
 
-return (
-    <div className="content">
-        <Header title="Gestion des admissions" />
-        <div className="content__grid">
-            <Planning />
-            <Entries/>
-            <Exits/>            
-        </div>                 
-    </div>
+    return (
+        <div className="content">
+            <Header title="Gestion des admissions" />
+            <div className="flux">
+                <StaysList />                    
+            </div>                 
+        </div>
     );
-
 }
 
 export default Flux;

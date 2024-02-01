@@ -45,12 +45,6 @@ h4 {
     color: #54A092;
 }
 
-/* FLUX */
-.flux {
-    max-width: 1000px;
-    margin: auto;
-}
-
 /* BUTTON */
 
 .button {    
@@ -115,6 +109,7 @@ main {
 }
 
 .content {
+    margin-left: 300px;
     width: 100%
 }
 

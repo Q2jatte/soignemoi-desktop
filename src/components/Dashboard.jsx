@@ -1,3 +1,5 @@
+// Dashboard component : grid dashboard widgets
+
 import Entries from "./Entries";
 import Header from "./Header";
 import Exits from "./Exits";

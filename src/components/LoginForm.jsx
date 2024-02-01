@@ -1,47 +1,32 @@
-/* Login Form : authentification des users */
+// Login Form : user authentication
+
 import React from 'react';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
+
+import axios from 'axios';
+
 import { useAuth } from '../contexts/AuthContext';
 
 import logo from '../assets/icon/logo.svg';
 
-import axios from 'axios';
 import '../css/loginForm.css';
+
+// API URL
+const apiUrl = import.meta.env.VITE_API_ROOT_URL;
 
 function LoginForm() {  
 
-  // valeurs du formulaire
-  const [email, setEmail] = useState('p.charvet@soignemoi.com');
-  const [password, setPassword] = useState('Studi2024*');
+  // form values
+  const [email, setEmail] = useState('h.andre@soignemoi.com');
+  const [password, setPassword] = useState('password');
   const [error, setError] = useState(null);
   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
-  // Context d'authentification
-  const { login } = useAuth();
-  
-  // génération du cookie avec le token JWT
-  const setHttpOnlySecureCookie = (cookieName, cookieValue, expirationDays = 7) => {
+  // Authentication context
+  const { login, saveCredentials } = useAuth();  
 
-    const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + expirationDays);
-
-    const cookieOptions = {
-      path: '/',  // Chemin du cookie (modifiable selon vos besoins)
-      expires: expirationDate,
-      secure: false, // TODO true pour https
-      httpOnly: true,
-      sameSite: 'strict',
-      };
-
-    const formattedCookie = `${cookieName}=${cookieValue}; ${Object.entries(cookieOptions).map(([key, value]) => `${key}=${value}`).join('; ')}`;
-    
-    // création du cookie
-    document.cookie = formattedCookie;
-   
-    console.log("Cookie enregistré : " + formattedCookie);    
-  };  
-
+  // Post authentication request
   const handleLogin = async (e) => {
       e.preventDefault();
 
@@ -51,39 +36,35 @@ function LoginForm() {
               password: password,
           };          
 
-          const response = await axios.post('http://127.0.0.1:8000/api/login_check', loginData, {
+          const response = await axios.post(`${apiUrl}/login_check`, loginData, {
               headers: {
               'Content-Type': 'application/json',                         
               },
           });
-          // enregistrement du token
-          console.log('Réponse de la requête de login :', response.data);
-          const token = response.data.token;
-          setHttpOnlySecureCookie('auth_token', token);
+          // Token registration       
+          const token = response.data.token;         
+          
+          // Update authentication context         
+          login(token);   
+          saveCredentials(email, password);       
 
-          // màj du contexte
-          login({ username: 'test@test.fr' });          
-
-          //redirection 
+          //redirect
           setRedirectToDashboard(true);
       
       } catch (error) {
           if (error.response) {
-              // La requête a été effectuée, mais le serveur a répondu avec un code d'erreur
+              // Specific error message
               if (error.response.status === 401) {
-                // Traitement spécifique pour une erreur 401 (Non autorisé)
+                // Authentication error
                 setError("Identifiants incorrects. Veuillez réessayer.");
               } else {
-                // Autres erreurs de réponse du serveur
+                // Server error
                 setError("Une erreur s'est produite lors de la requête de login.");
               }
-            } else if (error.request) {
-              // La requête n'a pas été effectuée
-              setError("La requête de login n'a pas pu être effectuée.");
-            } else {
-              // Autres erreurs
-              setError("Une erreur inattendue s'est produite : " + error);
-            }           
+          } else {
+            // other error
+            setError("Une erreur inattendue s'est produite.");
+          }           
       }
   };  
 

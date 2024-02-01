@@ -1,11 +1,13 @@
+// App root script
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Navigate,
 } from 'react-router-dom';
+
 import { AuthProvider } from './contexts/AuthContext';
 
 import LoginPage from './pages/LoginPage';
@@ -18,8 +20,7 @@ import ErrorPage from './pages/Error404';
 import './css/_reset.css';
 import './css/main.css';
 
-
-// Toutes les routes de l'app
+// App paths
 const router = createBrowserRouter([
   {
     path: '/',
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/patient',
+    path: '/patient/:id',
     element: <PatientPage />,
     errorElement: <ErrorPage />,
   },

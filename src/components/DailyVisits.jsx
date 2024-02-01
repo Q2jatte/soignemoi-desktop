@@ -1,3 +1,5 @@
+// Future component : table content all visits of the current day
+
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';

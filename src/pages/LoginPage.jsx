@@ -1,4 +1,4 @@
-// Login Page
+// Login Page : authentication process page
 
 import LoginForm from "../components/LoginForm";
 

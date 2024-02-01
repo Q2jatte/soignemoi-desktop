@@ -1,0 +1,21 @@
+.patient {
+    padding: 20px;
+}
+
+.patient__title {
+    padding-bottom: 40px;
+}
+
+.patient__section {
+    padding-bottom: 40px;
+}
+.patient__table {
+    padding: 10px;
+    padding-bottom: 20px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+}
+
+.patient__subtitle {
+    padding-bottom: 20px;
+}

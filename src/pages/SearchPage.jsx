@@ -1,17 +1,32 @@
-// Search page: search patient by name
+// Search Page: search patient by name
+
+import React from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 import Menu from "../components/Menu";
 import Search from "../components/Search";
 
 import '../css/flux.css';
 
-function SearchPage() {    
+function SearchPage() { 
+  
+  // Authentication context
+  const { isAuthenticated } = useAuth();
   
   return (
-    <div className="main">
-      <Menu/>
-      <Search/>
-    </div>
+    isAuthenticated ? (
+      <div className="main">
+
+        {/* Left side fixed menu */}
+        <Menu/>
+
+        {/* Search bar and results */}
+        <Search/>
+      </div>           
+    ) : (
+      <Navigate to="/login" />
+    )   
   );
 }
 

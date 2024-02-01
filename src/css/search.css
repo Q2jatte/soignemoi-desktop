@@ -1,0 +1,19 @@
+.search {
+    padding: 20px;
+}
+
+.search__bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.search__input {
+    height: 40px;
+    width: 220px;
+    border-color: #ab47bc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #ab47bc;
+}

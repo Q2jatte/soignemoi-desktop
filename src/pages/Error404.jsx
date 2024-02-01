@@ -1,4 +1,5 @@
-// Erreur 404
+// Error 404 Page : Default error page
+
 import error404 from '../assets/images/404.svg';
 import '../css/error404.css';
 

@@ -7,9 +7,10 @@ const url = require('url');
 let mainWindow;
 
 function createWindow() {
+
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1366,
+    height: 768,
     webPreferences: {
       nodeIntegration: true,
     },
