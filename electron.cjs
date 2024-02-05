@@ -4,6 +4,8 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 
+app.commandLine.appendSwitch('disable-web-security');
+
 let mainWindow;
 
 function createWindow() {
@@ -16,12 +18,14 @@ function createWindow() {
     },
   });
 
+  //mainWindow.loadFile('index.html')
+
   // Load the React app.
   mainWindow.loadURL(
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:5173'
       : url.format({
-          pathname: path.join(__dirname, 'build', 'index.html'),
+          pathname: path.join(__dirname, 'dist', 'index.html'),
           protocol: 'file:',
           slashes: true,
         })

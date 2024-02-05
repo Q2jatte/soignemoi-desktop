@@ -26,7 +26,7 @@ function Search(){
     const { isAuthenticated, token, isTokenValid } = useAuth();
 
     // Search text
-    const [searchTerm, setSearchTerm] = useState('mona');
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Search result list
     const [resultList, setResultList] = useState(null);

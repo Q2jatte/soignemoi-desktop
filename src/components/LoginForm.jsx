@@ -18,8 +18,8 @@ const apiUrl = import.meta.env.VITE_API_ROOT_URL;
 function LoginForm() {  
 
   // form values
-  const [email, setEmail] = useState('h.andre@soignemoi.com');
-  const [password, setPassword] = useState('password');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
