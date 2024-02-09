@@ -41,7 +41,7 @@ Make sure you have the following installed before getting started:
     # API root directory
     VITE_API_ROOT_URL=http://127.0.0.1:8000/api
     # Profil images directory
-    VITE_IMG_URL=http://127.0.0.1:8000/upload/images
+    VITE_IMG_URL=http://127.0.0.1:8000/uploads/images
     ```
     Copy this code into the .env file and customize the url.
 
